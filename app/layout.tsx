@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Qotion",
   description: "The collaborative hub for efficient and rapid workflows.",
   icons: {
-    icon: "/logo.svg", 
+    icon: "/logo-dark.svg", 
     apple: [
       {
         url: "/logo.svg",
