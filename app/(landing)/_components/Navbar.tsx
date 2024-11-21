@@ -44,7 +44,7 @@ const Navbar = () => {
           isAuthenticated && !isLoading && (
             <>
             <Button variant={"ghost"} size={"sm"} asChild>
-              <Link href="/documens">
+              <Link href="/documents">
                Enter Qotion
               </Link>
             </Button>
