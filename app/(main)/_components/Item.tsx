@@ -1,3 +1,5 @@
+"use client";
+
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Skeleton } from '@/components/ui/skeleton';
 import { api } from '@/convex/_generated/api';
@@ -54,7 +56,8 @@ export const Item =({
       if(!id)
           return;
 
-      const promise = archive({id});
+      const promise = archive({id})
+      .then(() => router.push('/documents'));
 
       toast.promise(promise,{
         loading: "Moving to trash...",
@@ -74,7 +77,7 @@ export const Item =({
         if(!expanded){
           onExpand?.();
         }
-        // router.push(`/documents/${documentId}`)
+        router.push(`/documents/${documentId}`)
       });
       toast.promise(promise,{
         loading: "Creating a new note...",
@@ -98,7 +101,7 @@ export const Item =({
             !!id && (
                 <div
                 role='button'
-                className='h-full rouded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 mr-1'
+                className='h-full rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 mr-1'
                 onClick={handleExpand}
                 >
                     <ChevronIcon className='h-4 w-4 shrink-0 text-muted-foreground/50'/>
@@ -164,7 +167,7 @@ export const Item =({
             </DropdownMenu>
 
               <div
-              role='buttom'
+              role='button'
               onClick={onCreate}
               className='opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:bg-neutral-600'
               > 
