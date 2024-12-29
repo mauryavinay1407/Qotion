@@ -22,17 +22,18 @@ export const metadata: Metadata = {
   title: "Qotion",
   description: "The collaborative hub for efficient and rapid workflows.",
   icons: {
-    icon: "/logo-dark.svg", 
-    apple: [
+    icon: [
       {
-        url: "/logo.svg",
         media: "(prefers-color-scheme: light)",
+        url: "/logo.svg",
+        href: "/logo.svg",
       },
       {
-        url: "/logo-dark.svg",
         media: "(prefers-color-scheme: dark)",
-      },
-    ],
+        url: "/logo-dark.svg",
+        href: "/logo-dark.svg",
+      }
+    ]
   },
 };
 
