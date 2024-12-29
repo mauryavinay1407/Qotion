@@ -15,7 +15,7 @@ interface DocumentIdPageProps {
     }; 
 };
 
-const documentIdPage = ({
+const DocumentIdPage = ({
   params
 } : DocumentIdPageProps) => {
 
@@ -67,4 +67,4 @@ const documentIdPage = ({
   );
 }
 
-export default documentIdPage;
+export default DocumentIdPage;
