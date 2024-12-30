@@ -13,7 +13,7 @@ interface DocumentIdPageProps {
   params: { documentId: string }; 
 };
 
-const DocumentIdPage = ({
+const DocumentIdPage = async({
   params
 } : DocumentIdPageProps) => {
 
