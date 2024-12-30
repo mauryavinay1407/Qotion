@@ -10,18 +10,18 @@ import dynamic from "next/dynamic";
 import { useMemo } from "react";
 
 interface DocumentIdPageProps {
-    params: {
-      documentId: Id<"documents">;
-    }; 
+  params: { documentId: string }; 
 };
 
 const DocumentIdPage = ({
   params
 } : DocumentIdPageProps) => {
 
+  const documentId = params.documentId as Id<"documents">;
+
   const Editor = useMemo(() => dynamic(() => import("@/components/editor"),{ssr:false}),[]);
   const document = useQuery(api.documents.getById,{
-    documentId:params.documentId 
+    documentId,
   });
 
 
@@ -29,7 +29,7 @@ const DocumentIdPage = ({
 
   const onChange = (content: string) => {
     update({
-      id: params.documentId,
+      id: documentId,
       content
     })
   }
@@ -50,7 +50,7 @@ const DocumentIdPage = ({
   }
 
   if(document === null){
-    return <div>Document Not DFound</div>
+    return <div>Document Not Found</div>
   }
   return (
     <div className="pb-40">
