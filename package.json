@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npx convex deploy --cmd 'npm run build'"
   },
   "dependencies": {
     "@blocknote/core": "^0.22.0",
